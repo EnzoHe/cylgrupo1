@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creatividad y Liderazgo - Grupo 1</title>
+    <link rel="stylesheet" href="Index.css">
+</head>
+<body id="BGColor">
+    <nav class="NavBar">
+        <div class="navContainer">
+            <p class="navTitle">Creatividad y Liderazgo (Grupo 1)</p>
+            <div class="burgerSpace">
+                <div class="burgerIcon">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+            <ul class="navItems">
+                <li class="nItem navIni"><p class="navItem">Inicio</p></li>
+                <li class="nItem navEqui"><p class="navItem">Acerca del equipo</p></li>
+                <li class="nItem navProto"><p class="navItem">Prototipo y versiones</p></li>
+                <li class="nItem navBita"><p class="navItem">Bitácora</p></li>
+                <li class="nItem navEntre"><p class="navItem">Entrevistas</p></li>
+            </ul>
+        </div>
+    </nav>
+    <section id="section1">
+        <p class="block1">Width: x</p>
+    </section>
+    <script>
+        const block1 = document.querySelector(".block1");
+        const navBar = document.querySelector(".NavBar");
+        const navContainer = document.querySelector(".navContainer");
+        const navItems = document.querySelector(".navItems");
+        const navItems_items = document.querySelectorAll(".nItem");
+        const burger = document.querySelector(".burgerSpace");
+        function MediaQuery1() {
+
+            if(window.innerWidth < 700){
+                navBar.appendChild(navItems);
+                
+            } else {
+                navContainer.appendChild(navItems);
+                burger.classList.remove("open");
+                navItems.classList.remove("open");
+            }
+
+            block1.textContent = "Width: " + window.innerWidth;
+
+            if(window.innerWidth < 400) {
+                block1.textContent += " - XXS";
+            } else if(window.innerWidth < 576) {
+                block1.textContent += " - XS";
+            } else if(window.innerWidth < 768) {
+                block1.textContent += " - SM";
+            } else if(window.innerWidth < 992) {
+                block1.textContent += " - MD";
+            } else if(window.innerWidth < 1200) {
+                block1.textContent += " - LG";
+            } else if(window.innerWidth < 1400) {
+                block1.textContent += " - XL";
+            } else if(window.innerWidth >= 1400) {
+                block1.textContent += " - XXL";
+            }
+        }
+        window.addEventListener("resize", MediaQuery1);
+        MediaQuery1();
+
+        document.addEventListener("click", function() {
+            const isInsideNavBar = navBar.contains(event.target);
+            const isInsideBurger = burger.contains(event.target);
+            let isInsideNavItems_items = false;
+
+            navItems_items.forEach(
+                function(item) {
+                    if(item.contains(event.target)) {
+                        isInsideNavItems_items = true;
+                    }
+                }
+            )
+            if(!isInsideNavBar || isInsideNavItems_items) {
+                burger.classList.remove("open");
+                navItems.classList.remove("open");
+
+            } else if(isInsideBurger) {
+
+                burger.classList.toggle("open");
+
+                if(burger.classList.contains("open")) {
+                    navItems.classList.add("open");
+                } else {
+                    navItems.classList.remove("open");
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

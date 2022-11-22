@@ -1,0 +1,129 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#BGColor{
+    background-color: rgb(178, 250, 144);
+}
+.navTitle{
+    font-weight: bold;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor:default;
+}
+.NavBar{
+    position: fixed;
+    margin-top: -150px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "container"
+                         "navItems";
+}
+.navContainer{
+    height: 50px;
+    grid-area: container;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(8, 114, 8);
+
+}
+.navItems{
+    grid-area: navItems;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(54, 165, 54);
+    height: 0;
+
+    transition: all 0.3s;
+    overflow: hidden;
+
+    transition: all 0.3s;
+    overflow: hidden;
+}
+.nItem{
+    list-style: none;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.navItem{
+    
+    text-align: center;
+    padding: 10px;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.block1{
+    font-size: 30px;margin-top: 150px;
+}
+.burgerSpace{
+    width: 40px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.burgerIcon{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.bar{
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    border: none;
+
+    transition: all 0.3s;
+}
+.burgerSpace:hover .bar{
+    background-color: rgb(54, 165, 54);
+}
+
+.burgerSpace.open .bar:nth-child(1){
+    width: 35px;
+    transform: translate(0, 12.875px) rotate(45deg);
+}
+.burgerSpace.open .bar:nth-child(2){
+    transform: translate(50px, 0px);
+    opacity: 0;
+}
+.burgerSpace.open .bar:nth-child(3){
+    width: 35px;
+    transform: translate(0, -12.875px) rotate(-45deg);
+}
+.navItems.open{
+    height: 100%;
+}
+.nItem:hover{
+    background-color:  rgb(8, 114, 8);
+}
+
+@media screen and (min-width: 700px) {
+    .burgerSpace{
+        display: none;
+    }
+    .navItems{
+        height: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: initial;
+    }
+    .nItem{
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    .nItem:hover{
+        background-color: rgb(54, 165, 54);
+    }
+    .navItems .navItem{
+        width: 75px;
+    }
+}
