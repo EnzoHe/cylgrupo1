@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creatividad y Liderazgo - Grupo 1</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="Index.css">
 </head>
 <body id="BGColor">
     <nav class="NavBar">
@@ -27,9 +27,81 @@
             </ul>
         </div>
     </nav>
-    <section id="section1">
+    <section id="Inicio">
+        <p class="centered textTitle">
+            Problemática: Acumulación de desechos y basura, dejados por 
+            las construcciones y tiradas en la calle, en el distrito 
+            de San Martín de Porres y Santiago de Surco, en la 
+            ciudad de Lima, Perú.
+        </p>
+        <p class="justified textNormal1">
+            La contaminación es un problema que mayormente 
+            ocurre por la ignorancia de las personas frente a la 
+            contaminación, pero ha habido casos que parecen más 
+            actos de delincuencia.
+        </p>
+        <p class="justified textNormal2">
+            Por ejemplo, Panamericana TV publicó una noticia el 
+            2 de mayo del 2022, la cual fue compartida en el 
+            diario de noticias argentino Infobae (2022), donde 
+            un ciudadano por la avenida Arequipa, en el 
+            distrito de San Martín de Porres, grabó a personal 
+            de la Municipalidad del distrito arrojando desmonte 
+            y basura en la calle, quienes escaparon en 
+            camioneta apenas lo vieron grabándolos. Si gente de 
+            la autoridad ignora el compromiso que tenemos con 
+            el medio ambiente y encima se burla de los 
+            ciudadanos así ¿qué se podría esperar del pueblo? 
+            Pues sí, alguna vez habremos visto a una persona 
+            común arrojando basura de esa manera, y salirse 
+            con la suya desgraciadamente.
+        </p>
+        <div class="image1">
+            <img class="img1" src="Sources/image1.png">
+            <p class="centered italic textFigure">
+                Figura 1. Foto sacada de un video de YouTube, 
+                mostrado en la noticia. Adaptado de “¡El colmo! 
+                Captan a municipales de smp arrojando basura, 
+                son increpados por vecinos y huyen”, por 
+                panamericana.pe, 2022
+            </p>
+        </div>
+        <p class="justified textNormal3">
+            Sabemos que hay esta clase de actos en el país,
+            pero también hay descuidos menores de la
+            gente, como el desmonte, residuos de
+            construcción, que no es llevado a una planta de
+            clasificación, restos dejados en botes de basura
+            por descuidos de los recolectores, etc. Esto
+            puede verse en en un caso ocurrido en una
+            playa del distrito de Barranco llamada “Las
+            Cascadas”, en el circuito de playas de Costa
+            Verde.
+        </p>
+        <div class="image2">
+            <img class="img2" src="Sources/image2.png">
+            <p class="centered italic textFigure">
+                Figura 2. Foto sacada de un video de YouTube, 
+                sacado de la página del Ipama. Adaptado de 
+                “Procuraduría del Minam presenta denuncia 
+                penal por arrojo de desmonte en la Costa 
+                Verde”, por ipama.org.pe, 2018
+            </p>
+        </div>
+    </section>
+    <section id="Equipo">
         <p class="block1">Width: x</p>
     </section>
+    <section id="Prototipo">
+        <p class="block3">Width: x</p>
+    </section>
+    <section id="Bitácora">
+        <p class="block4">Width: x</p>
+    </section>
+    <section id="Entrevistas">
+        <p class="block5">Width: x</p>
+    </section>
+
     <script>
         const block1 = document.querySelector(".block1");
         const navBar = document.querySelector(".NavBar");
@@ -39,7 +111,7 @@
         const burger = document.querySelector(".burgerSpace");
         function MediaQuery1() {
 
-            if(window.innerWidth < 700){
+            if(window.innerWidth < 768){
                 navBar.appendChild(navItems);
                 
             } else {
